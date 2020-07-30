@@ -24,19 +24,19 @@ pipeline {
 		stage("Deploy - Dev") {
 			steps { deploy('dev') }
 		}
-/*
+
 		stage("Test - UAT Dev") {
 			steps { runUAT(8888) }
 		}
-*/
+
 		stage("Deploy - Stage") {
 			steps { deploy('stage') }
 		}
-/*
+
 		stage("Test - UAT Stage") {
 			steps { runUAT(88) }
 		}
-*/
+
 	}
 }
 
@@ -73,8 +73,8 @@ def deploy(environment) {
 
 
 def runUnittests() {
-	bat "pip3 install --no-cache-dir -r ./section_4/code/cd_pipeline/requirements.txt"
-	bat "python3 section_4/code/cd_pipeline/tests/test_flask_app.py"
+	bat "pip install --no-cache-dir -r ./section_4/code/cd_pipeline/requirements.txt"
+	bat "python section_4/code/cd_pipeline/tests/test_flask_app.py"
 }
 
 
