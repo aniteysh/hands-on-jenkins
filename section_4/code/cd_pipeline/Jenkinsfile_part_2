@@ -12,11 +12,11 @@ pipeline {
 	}
 
 	stages {
-/*
+
 		stage("Test - Unit tests") {
 			steps { runUnittests() }
 		}
-*/
+
 		stage("Build") {
 			steps { buildApp() }
 		}
@@ -73,7 +73,7 @@ def deploy(environment) {
 
 
 def runUnittests() {
-	bat "pip3 install --no-cache-dir -r ./section_4/code/cd_pipeline/requirements.txt"
+//	bat "pip3 install --no-cache-dir -r ./section_4/code/cd_pipeline/requirements.txt"
 	bat "python3 section_4/code/cd_pipeline/tests/test_flask_app.py"
 }
 
