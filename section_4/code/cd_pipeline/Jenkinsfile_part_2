@@ -12,11 +12,11 @@ pipeline {
 	}
 
 	stages {
-
+/*
 		stage("Test - Unit tests") {
 			steps { runUnittests() }
 		}
-
+*/
 		stage("Build") {
 			steps { buildApp() }
 		}
@@ -24,18 +24,19 @@ pipeline {
 		stage("Deploy - Dev") {
 			steps { deploy('dev') }
 		}
-
+/*
 		stage("Test - UAT Dev") {
 			steps { runUAT(8888) }
 		}
-
+*/
 		stage("Deploy - Stage") {
 			steps { deploy('stage') }
 		}
-
+/*
 		stage("Test - UAT Stage") {
 			steps { runUAT(88) }
 		}
+*/
 	}
 }
 
